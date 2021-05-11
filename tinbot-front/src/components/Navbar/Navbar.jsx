@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Nav, NavItem, NavLink } from "reactstrap";
+import React from "react";
+import { Nav, NavLink } from "reactstrap";
 import "./Navbar.css";
 
 function Header(props) {
@@ -57,10 +57,10 @@ function Header(props) {
     // </Navbar>
     <div>
       <Nav className="navbar">
-        <NavLink className="navbar-link" href="#">
+        <NavLink className="navbar-link" href="/">
           Accueil
         </NavLink>
-        <NavLink className="navbar-link" href="#">
+        <NavLink className="navbar-link" href="rencontre">
           Rencontre
         </NavLink>
         <NavLink className="navbar-link" href="#">
