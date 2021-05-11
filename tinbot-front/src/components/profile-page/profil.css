@@ -1,0 +1,11 @@
+.container-profil {
+    background-color: rgb(32, 10, 85);
+    height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.profil-profil {
+display: flex;
+justify-content: center;
+padding-top: 100px;
+}
