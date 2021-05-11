@@ -1,0 +1,55 @@
+/* * {
+  margin: 0;
+} */
+
+.container-home {
+  background-image: url("https://images.pexels.com/photos/3214110/pexels-photo-3214110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  /* background-image: url("https://images.pexels.com/photos/2579916/pexels-photo-2579916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.title-appli {
+  color: white;
+  font-size: 50px;
+  padding-top: 10%;
+  font-family: Helvetica, sans-serif;
+  padding-bottom: 160px;
+}
+
+.search-text {
+  color: white;
+  /* margin-right: 6px;
+  margin-top: 4px; */
+  font-size: 25px;
+  font-family: Helvetica, sans-serif;
+}
+
+.typewriting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#buttonHome {
+  margin-top: 100px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+#buttonHome:hover {
+  background-color: #062644;
+  color: white;
+  box-shadow: 3px 3px 25px 8px rgba(255, 255, 255, 0.62);
+}
+
+.logo {
+  width: 2.5%;
+  height: auto;
+  margin-bottom: 15px;
+}
