@@ -1,13 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
-import "antd/dist/antd.css";
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter} from 'react-router-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import './components/profile-page/profil';
 
-  document.querySelector("#root")
+ 
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+ 
+  </BrowserRouter>,
+  document.getElementById('root')
 );
+
+reportWebVitals();
+
