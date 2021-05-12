@@ -6,6 +6,8 @@ import "./Rencontre.css";
 
 function Rencontre() {
   const [data, setData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+
   useEffect(() => {
     resquestApi();
   }, []);
@@ -17,14 +19,34 @@ function Rencontre() {
       const json = await resquest.json();
       console.log(json);
       setData(json);
+      setFilterData(json);
     } catch (e) {
       console.log(`Error : ${e}.`);
     }
   };
 
   const { Option } = Select;
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
+
+  const filterMenager = (value) => {
+    let array = [];
+    console.log(value);
+
+    data
+      .filter((el) => el.type.includes(value))
+      .map((filterName) => {
+        return [array.push(filterName), setFilterData(array)];
+      });
+  };
+
+  const filterRelation = (value) => {
+    let array = [];
+    console.log(value);
+
+    data
+      .filter((el) => el.type.includes(value))
+      .map((filterName) => {
+        return [array.push(filterName), setFilterData(array)];
+      });
   };
 
   return (
@@ -35,22 +57,24 @@ function Rencontre() {
         <Select
           defaultValue="Type"
           style={{ width: 120, marginRight: "20px" }}
-          onChange={handleChange}
+          onChange={filterMenager}
         >
-          <Option value="menager">Ménager</Option>
-          <Option value="Lego">Lego</Option>
-          <Option value="Droïd">Droïd</Option>
-          <Option value="Autobot">Autobot</Option>
+          <Option value="ménager">Ménager</Option>
+          <Option value="lego">Lego</Option>
+          <Option value="droïde">Droïd</Option>
+          <Option value="autobot">Autobot</Option>
+          <Option value="drone">Drone</Option>
         </Select>
+
         <Select
           defaultValue="Relation"
           style={{ width: 120, marginLeft: "20px" }}
-          onChange={handleChange}
+          onChange={filterRelation}
         >
-          <Option value="Galactique">Galactique</Option>
-          <Option value="Electrique">Electrique</Option>
-          <Option value="Bien huilé">Bien huilé</Option>
-          <Option value="Court-circuité">Court-circuité</Option>
+          <Option value="galactique">Galactique</Option>
+          <Option value="électrique">Electrique</Option>
+          <Option value="bien huilé">Bien huilé</Option>
+          <Option value="court-circuit">Court-circuité</Option>
         </Select>
       </div>
       <div
@@ -61,13 +85,15 @@ function Rencontre() {
           justifyContent: "center",
         }}
       >
-        {data &&
-          data.map((item) => (
+        {filterData &&
+          filterData.map((item) => (
             <Cards
               key={item.id}
               title={item.name}
               img={item.picture}
               description={item.biography}
+              id={item.id}
+              affichage={true}
             />
           ))}
       </div>
