@@ -25,6 +25,7 @@ function Home() {
   return (
     <div className="container-home">
       <Navbar />
+      <div className='title-container'>
       <h1 className="title-appli">
         Tinb
         <span>
@@ -32,11 +33,14 @@ function Home() {
         </span>
         t
       </h1>
+      </div>
       <div className="typewriting">
         <h3 className="search-text">Tu cherches un : </h3>
         <TypeWriting />
       </div>
+      <div className="div-button">
       <Button onClick={showModal} size={"large"} id="buttonHome">Inscris-toi</Button>
+      </div>
       <Modal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <Form/>
       </Modal>

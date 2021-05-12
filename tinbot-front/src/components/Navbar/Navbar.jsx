@@ -57,7 +57,7 @@ function Header(props) {
     // </Navbar>
     <div>
       <Nav className="navbar">
-        <NavLink className="navbar-link" href="#">
+        <NavLink className="navbar-link" href="/">
           Accueil
         </NavLink>
         <NavLink className="navbar-link" href="#">
