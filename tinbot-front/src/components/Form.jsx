@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
+// import { Modal} from "antd";
 import axios from 'axios';
 
 import './Form.css';
 
+
 function Form () {
-    const [type, setType] = useState('');
-    const [relation, setRelation] = useState('');
+
+    // const countDown =()  => {
+    //     const modal = Modal.success({
+    //       title: 'Votre profil a été créer avec succès',
+    //       content: `Vous pouvez désormais consulter les différents profils`,
+    //     });
+    //   }
+
+    const [type, setType] = useState('Robot ménager');
+    const [relation, setRelation] = useState('bien-huilée');
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
     const [bio, setBio] = useState('');
@@ -27,24 +37,24 @@ function Form () {
         .post('http://localhost:4000/profile', { ...contactsubmit })
         .then(function () {
 
-          setType('');
-          setRelation('');
-          setName('');
-          setPhoto('');
-          setBio('');
-          setProfil([...profil, contactsubmit]);
+            setType('');
+            setRelation('');
+            setName('');
+            setPhoto('');
+            setBio('');
+            setProfil([...profil, contactsubmit]);
         })
         .catch(function () {});
     }
 
     return (
         <div className="big-container">
-        <div className="container">
+        <div className="container-f">
         <h2>Créer votre Profil</h2>
         <form className='container-form' onSubmit={handleSubmit}>
 
             <label for="type">Choisissez votre type</label>
-            <select name="type" onChange={(e) => setType(e.target.value)}>
+            <select name="type" value={type} onChange={(e) => setType(e.target.value)}>
             <option value="ménager">Robot ménager</option>
             <option value="droïd">Droïd</option>
             <option value="autobot">Autobot</option>
@@ -53,7 +63,7 @@ function Form () {
           </select>
 
           <label for="relation">Que cherchez-vous ?</label>
-          <select name="relation" onChange={(e) => setRelation(e.target.value)}>
+          <select name="relation" value={relation} onChange={(e) => setRelation(e.target.value)}>
             <option value="bien-huilée">Bien Huilée</option>
             <option value="court-circuit">Court-Circuit</option>
             <option value="électrique">Electrique</option>
@@ -61,12 +71,12 @@ function Form () {
           </select>
 
           <label htmlFor="name">Votre Nom</label>
-          <input name="name" onChange={(e) => setName(e.target.value)} required></input>
-          <label htmlFor="image" required>Votre photo de profil</label>
-          <input name="image" onChange={(e) => setPhoto(e.target.value)}></input>
+          <input name="name" value={name} onChange={(e) => setName(e.target.value)} required></input>
+          <label htmlFor="image" required>Votre photo de profil (lien URL)</label>
+          <input name="image" value={photo} onChange={(e) => setPhoto(e.target.value)}></input>
 
           <label htmlFor="bio">Votre description</label>
-          <textarea name="bio" onChange={(e) => setBio(e.target.value)} required></textarea>
+          <textarea name="bio" value={bio} onChange={(e) => setBio(e.target.value)} required></textarea>
           <div className="bouton">
           <button type='submit'>Je m'inscris</button>
           </div>
