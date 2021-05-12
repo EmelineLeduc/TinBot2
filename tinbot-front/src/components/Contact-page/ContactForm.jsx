@@ -1,15 +1,28 @@
 import './ContactForm.css';
 import Header from '../Navbar/Navbar';
+import { message } from 'antd';
 
-function ContactForm () {
+
+const ContactForm = () => {
+
+  const success = (e) => {
+    e.preventDefault()
+    message.success({
+      content: 'Votre message a bien été envoyé',
+      className: 'custom-class',
+      style: {
+        marginTop: '5vh',
+      },
+    });
+  }
 
     return (
-        <div>
+        <div className="father-container">
         <Header/>
         <div className="big-container2">
-        <div className="container-f">
+        <div className="container-fc">
         <h2>Contactez-Nous</h2>
-        <form className='container-form'>
+        <form className='container-formc' onSubmit={success}>
 
           <label htmlFor="name">Votre Prénom</label>
           <input name="name" required></input>

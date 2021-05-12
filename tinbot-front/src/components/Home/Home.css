@@ -12,8 +12,7 @@
 
 .title-appli {
   color: white;
-  font-size: 50px;
-  padding-top: 10%;
+  font-size: 60px;
   font-family: Helvetica, sans-serif;
   padding-bottom: 160px;
 }
@@ -40,6 +39,7 @@
   background-color: white;
   color: black;
   font-weight: bold;
+  width:150px;
 }
 
 #buttonHome:hover {
@@ -49,15 +49,27 @@
 }
 
 .logo {
-  width: 2.5%;
+  width: 45px;
   height: auto;
   margin-bottom: 15px;
 }
 
 .title-container {
   text-align: center;
+  height: 280px;
+  padding-top: 120px;
 }
 
 .div-button {
   text-align: center;
+}
+
+.ant-modal-footer {
+  display: none !important;
+}
+
+.ant-modal-body {
+  padding: 0 !important;
+  border-radius: 20px !important;
+  background-color: red;
 }

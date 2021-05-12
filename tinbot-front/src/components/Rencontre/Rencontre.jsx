@@ -101,7 +101,6 @@ function Rencontre() {
           flexWrap: "wrap",
           margin: "auto",
           justifyContent: "center",
-          height: "100vh",
         }}
       >
         {filterData &&

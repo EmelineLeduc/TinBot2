@@ -14,7 +14,7 @@
     align-items: center;
     border-radius: 30px;
     background: linear-gradient(#5500ff, #10176d);
-    margin-top: 20px;
+    margin: -20px -10px;
     padding:20px 0px;
 }
 
@@ -36,6 +36,7 @@
     height:100px;
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 
 .bouton button {
@@ -60,7 +61,14 @@
     font-weight:500;
 }
 
-.big-container input, textarea, select {
+.big-container input, textarea {
+    border-radius: 20px;
+    height:45px;
+    margin-bottom: 35px;
+    color:black;
+}
+
+.container-form select {
     border-radius: 20px;
     height:45px;
     margin-bottom: 35px;
@@ -70,6 +78,7 @@
     height:20%;
     padding:10px;
     font-size: 15px;
+    color:black;
 }
 
 .image, .name, .bio {

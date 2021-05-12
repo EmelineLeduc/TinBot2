@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-// import { Modal} from "antd";
 import axios from 'axios';
 
+import { message } from 'antd';
 import './Form.css';
 
 
-function Form () {
 
-    // const countDown =()  => {
-    //     const modal = Modal.success({
-    //       title: 'Votre profil a été créer avec succès',
-    //       content: `Vous pouvez désormais consulter les différents profils`,
-    //     });
-    //   }
+
+
+
+function Form () {
 
     const [type, setType] = useState('Robot ménager');
     const [relation, setRelation] = useState('bien-huilée');
@@ -29,9 +26,7 @@ function Form () {
         name: name,
         picture: photo,
         biography: bio,
-
       }
-      console.log(contactsubmit);
       
       axios
         .post('http://localhost:4000/profile', { ...contactsubmit })
@@ -43,6 +38,12 @@ function Form () {
             setPhoto('');
             setBio('');
             setProfil([...profil, contactsubmit]);
+
+                
+            message.success({
+                    content: 'Votre profil a bien été crée',
+                    className: 'custom-class'
+                  });
         })
         .catch(function () {});
     }
@@ -80,7 +81,6 @@ function Form () {
           <div className="bouton">
           <button type='submit'>Je m'inscris</button>
           </div>
-
         </form>
         </div>
         </div>

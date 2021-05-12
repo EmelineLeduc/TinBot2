@@ -12,6 +12,9 @@ function Header(props) {
         <NavLink className="navbar-link" href="rencontre">
           Rencontre
         </NavLink>
+        <NavLink className="navbar-link" href="/contact">
+          Contact
+        </NavLink>
       </Nav>
     </div>
   );

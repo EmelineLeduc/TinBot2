@@ -1,5 +1,4 @@
 import React from "react";
-import ProfileApp from "./components/profile-page/profil";
 import Form from "./components/Form";
 import Home from "./components/Home/Home";
 import ContactForm from "./components/Contact-page/ContactForm";
@@ -13,7 +12,6 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/profil" component={ProfileApp} />
         <Route exact path="/form" component={Form} />
         <Route exact path="/contact" component={ContactForm} />
         <Route path="/rencontre" component={Rencontre} />
