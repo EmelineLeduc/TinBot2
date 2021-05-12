@@ -26,7 +26,11 @@ function Cards(props) {
           />
         }
       >
-        <Meta title={props.title} description={props.description} />
+        <Meta
+          style={{ maxHeight: "150px", minHeight: "140px" }}
+          title={props.title}
+          description={props.description}
+        />
         {props.affichage ? (
           <Button
             type="primary"

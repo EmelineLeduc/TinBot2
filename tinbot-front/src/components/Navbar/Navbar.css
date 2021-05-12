@@ -2,9 +2,8 @@
   background-color: transparent;
   height: 60px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end !important;
   font-size: 20px;
-  align-items: center;
 }
 
 #collasible-nav-dropdown {
@@ -20,13 +19,13 @@
 @media only screen and (max-width: 991px) {
   .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 }
 
 .navbar-link {
   color: white !important;
-  margin:20px 30px;
+  margin: 20px 30px;
 }
 
 .navbar-link:hover {

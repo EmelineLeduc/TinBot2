@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import Cards from "../Card/Card";
-import { Select } from "antd";
+import { Select, Button } from "antd";
 import "./Rencontre.css";
 
 function Rencontre() {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
+  const [resetbtn, setResetbtn] = useState(false);
 
   useEffect(() => {
     resquestApi();
@@ -28,6 +29,8 @@ function Rencontre() {
   const { Option } = Select;
 
   const filterMenager = (value) => {
+    setResetbtn(true);
+    console.log(value);
     let array = [];
     console.log(value);
 
@@ -39,16 +42,21 @@ function Rencontre() {
   };
 
   const filterRelation = (value) => {
+    setResetbtn(true);
     let array = [];
     console.log(value);
-
+    console.log(data);
     data
-      .filter((el) => el.type.includes(value))
+      .filter((el) => el.relation.includes(value))
       .map((filterName) => {
         return [array.push(filterName), setFilterData(array)];
       });
   };
 
+  const reset = () => {
+    setFilterData(data);
+    setResetbtn(false);
+  };
   return (
     <div className="container-rencontre">
       <Navbar />
@@ -73,16 +81,27 @@ function Rencontre() {
         >
           <Option value="galactique">Galactique</Option>
           <Option value="électrique">Electrique</Option>
-          <Option value="bien huilé">Bien huilé</Option>
+          <Option value="bien huilée">Bien huilée</Option>
           <Option value="court-circuit">Court-circuité</Option>
         </Select>
+        {resetbtn && (
+          <Button
+            type="primary"
+            onClick={reset}
+            style={{ width: 120, marginLeft: "40px", backgroundColor: "grey" }}
+          >
+            Reset
+          </Button>
+        )}
       </div>
+
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
           margin: "auto",
           justifyContent: "center",
+          height: "100vh",
         }}
       >
         {filterData &&
