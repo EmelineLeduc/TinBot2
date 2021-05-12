@@ -39,7 +39,7 @@ function Form () {
 
     return (
         <div className="big-container">
-        <div className="container">
+        <div className="container-f">
         <h2>Créer votre Profil</h2>
         <form className='container-form' onSubmit={handleSubmit}>
 

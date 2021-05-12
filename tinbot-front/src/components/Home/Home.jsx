@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
+import Form from "../Form";
 import TypeWriting from "./TypeWriting";
-import { Button } from "antd";
+import { Modal, Button } from "antd";
 import Flame from "./Img/logo.png";
 
 import "./Home.css";
+
 function Home() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className="container-home">
       <Navbar />
@@ -20,12 +36,10 @@ function Home() {
         <h3 className="search-text">Tu cherches un : </h3>
         <TypeWriting />
       </div>
-
-      <Button type="primary" size={"large"} id="buttonHome">
-        <a href="/rencontres" id="button-link">
-          Inscris-toi
-        </a>
-      </Button>
+      <Button onClick={showModal} size={"large"} id="buttonHome">Inscris-toi</Button>
+      <Modal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <Form/>
+      </Modal>
     </div>
   );
 }

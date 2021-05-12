@@ -1,37 +1,35 @@
-* {
-    font-size: medium;
-    color:white;
-}
 
 .big-container {
     width:100%;
     display: flex;
     justify-content: center;
+    font-size: medium;
+    color:white;
 }
 
-.container {
+.container-f {
     width:700px;
     display:flex;
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
     background: linear-gradient(#5500ff, #10176d);
-    margin: 100px 0px;
+    margin-top: 20px;
     padding:20px 0px;
 }
 
 .container-form {
     display:flex;
     flex-direction: column;
-    width:50%;
+    width: 75%;
     height:auto;
     justify-content: space-around;
 }
 
-
-h2 {
+.container-f h2 {
     font-size: x-large;
     margin-bottom: 40px;
+    color:white;
 }
 .bouton {
     width: 100%;
@@ -40,7 +38,7 @@ h2 {
     justify-content: center;
 }
 
-button {
+.bouton button {
     height:40px;
     width:250px;
     border-radius: 20px;
@@ -49,26 +47,26 @@ button {
     background-color: #1161ee;
 }
 
-button, input {
+.container-form button, input {
     border:1px solid white;
 }
-button:hover {
+
+.bouton button:hover {
     opacity:0.5;
 }
 
-
-label {
+.container-form label {
     margin-bottom:10px;
     font-weight:500;
 }
 
-input, textarea, select {
+.big-container input, textarea, select {
     border-radius: 20px;
     height:45px;
     margin-bottom: 35px;
 }
 
-textarea {
+.big-container textarea {
     height:20%;
     padding:10px;
     font-size: 15px;
@@ -78,7 +76,7 @@ textarea {
     font-weight: bold;
 }
 
-select, input, textarea {
+.big-container select, input, textarea {
     padding-left: 3%;
     color: black;
     margin-top: 2px;
