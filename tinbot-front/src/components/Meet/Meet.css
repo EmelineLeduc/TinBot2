@@ -1,0 +1,14 @@
+.rencontre-container {
+  height: auto;
+  background-color: #07172e;
+}
+
+.rencontre-title {
+  color: white;
+  margin-bottom: 60px;
+  padding-top: 2%;
+}
+
+.filter {
+  padding-bottom: 30px;
+}
