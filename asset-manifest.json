@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TinBot2/static/css/main.edbfa4e6.chunk.css",
-    "main.js": "/TinBot2/static/js/main.7ee12fec.chunk.js",
-    "main.js.map": "/TinBot2/static/js/main.7ee12fec.chunk.js.map",
+    "main.js": "/TinBot2/static/js/main.e601eccd.chunk.js",
+    "main.js.map": "/TinBot2/static/js/main.e601eccd.chunk.js.map",
     "runtime-main.js": "/TinBot2/static/js/runtime-main.47300f38.js",
     "runtime-main.js.map": "/TinBot2/static/js/runtime-main.47300f38.js.map",
     "static/css/2.3a3966b0.chunk.css": "/TinBot2/static/css/2.3a3966b0.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.3a3966b0.chunk.css",
     "static/js/2.38d1d396.chunk.js",
     "static/css/main.edbfa4e6.chunk.css",
-    "static/js/main.7ee12fec.chunk.js"
+    "static/js/main.e601eccd.chunk.js"
   ]
 }
