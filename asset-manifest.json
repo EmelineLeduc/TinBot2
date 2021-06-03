@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Tinbot2/static/css/main.edbfa4e6.chunk.css",
-    "main.js": "/Tinbot2/static/js/main.82893d25.chunk.js",
-    "main.js.map": "/Tinbot2/static/js/main.82893d25.chunk.js.map",
-    "runtime-main.js": "/Tinbot2/static/js/runtime-main.e09d70b5.js",
-    "runtime-main.js.map": "/Tinbot2/static/js/runtime-main.e09d70b5.js.map",
-    "static/css/2.3a3966b0.chunk.css": "/Tinbot2/static/css/2.3a3966b0.chunk.css",
-    "static/js/2.fc756768.chunk.js": "/Tinbot2/static/js/2.fc756768.chunk.js",
-    "static/js/2.fc756768.chunk.js.map": "/Tinbot2/static/js/2.fc756768.chunk.js.map",
-    "static/js/3.68935268.chunk.js": "/Tinbot2/static/js/3.68935268.chunk.js",
-    "static/js/3.68935268.chunk.js.map": "/Tinbot2/static/js/3.68935268.chunk.js.map",
-    "index.html": "/Tinbot2/index.html",
-    "static/css/2.3a3966b0.chunk.css.map": "/Tinbot2/static/css/2.3a3966b0.chunk.css.map",
-    "static/css/main.edbfa4e6.chunk.css.map": "/Tinbot2/static/css/main.edbfa4e6.chunk.css.map",
-    "static/js/2.fc756768.chunk.js.LICENSE.txt": "/Tinbot2/static/js/2.fc756768.chunk.js.LICENSE.txt"
+    "main.css": "/TinBot2/static/css/main.edbfa4e6.chunk.css",
+    "main.js": "/TinBot2/static/js/main.82893d25.chunk.js",
+    "main.js.map": "/TinBot2/static/js/main.82893d25.chunk.js.map",
+    "runtime-main.js": "/TinBot2/static/js/runtime-main.069fe81d.js",
+    "runtime-main.js.map": "/TinBot2/static/js/runtime-main.069fe81d.js.map",
+    "static/css/2.3a3966b0.chunk.css": "/TinBot2/static/css/2.3a3966b0.chunk.css",
+    "static/js/2.41330f7c.chunk.js": "/TinBot2/static/js/2.41330f7c.chunk.js",
+    "static/js/2.41330f7c.chunk.js.map": "/TinBot2/static/js/2.41330f7c.chunk.js.map",
+    "static/js/3.68935268.chunk.js": "/TinBot2/static/js/3.68935268.chunk.js",
+    "static/js/3.68935268.chunk.js.map": "/TinBot2/static/js/3.68935268.chunk.js.map",
+    "index.html": "/TinBot2/index.html",
+    "static/css/2.3a3966b0.chunk.css.map": "/TinBot2/static/css/2.3a3966b0.chunk.css.map",
+    "static/css/main.edbfa4e6.chunk.css.map": "/TinBot2/static/css/main.edbfa4e6.chunk.css.map",
+    "static/js/2.41330f7c.chunk.js.LICENSE.txt": "/TinBot2/static/js/2.41330f7c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e09d70b5.js",
+    "static/js/runtime-main.069fe81d.js",
     "static/css/2.3a3966b0.chunk.css",
-    "static/js/2.fc756768.chunk.js",
+    "static/js/2.41330f7c.chunk.js",
     "static/css/main.edbfa4e6.chunk.css",
     "static/js/main.82893d25.chunk.js"
   ]
