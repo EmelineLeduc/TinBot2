@@ -1,12 +1,11 @@
+import ReactTypingEffect from "react-typing-effect";
 import React from "react";
 import "./TypeWriting.css";
-
-import ReactTypingEffect from "react-typing-effect";
 
 const TypeWriting = () => {
   return (
     <>
-      <div className="container">
+      <div className="typewriting-container">
         <ReactTypingEffect
           text={["robot ménager", "robot lego", "droïde", "autobot"]}
           cursorRenderer={(cursor) => <h3>{cursor}</h3>}
@@ -20,15 +19,7 @@ const TypeWriting = () => {
                 {text.split("").map((char, i) => {
                   const key = `${i}`;
                   return (
-                    <span
-                      key={key}
-                      style={{
-                        color: "white",
-                        padding: 0,
-                        fontFamily: "Helvetica, sans-serif",
-                        fontSize: "25px",
-                      }}
-                    >
+                    <span className="typewriting" key={key}>
                       {char}
                     </span>
                   );

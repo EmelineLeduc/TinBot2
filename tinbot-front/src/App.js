@@ -1,21 +1,21 @@
 import React from "react";
-import Form from "./components/Form";
-import Home from "./components/Home/Home";
-import ContactForm from "./components/Contact-page/ContactForm";
-import RencontreDetails from "./components/Rencontre/RencontreDetails";
-import Rencontre from "./components/Rencontre/Rencontre";
-import "./App.css";
 import { Switch, Route } from "react-router-dom";
+import ContactForm from "./components/Contact/ContactForm";
+import Home from "./components/Home/Home";
+import Meet from "./components/Meet/Meet";
+import MeetDetails from "./components/Meet/MeetDetails";
+import SignIn from "./components/Home/SignIn/SignIn";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/form" component={Form} />
+        <Route exact path="/form" component={SignIn} />
         <Route exact path="/contact" component={ContactForm} />
-        <Route path="/rencontre" component={Rencontre} />
-        <Route path="/:id" component={RencontreDetails} />
+        <Route path="/rencontre" component={Meet} />
+        <Route path="/:id" component={MeetDetails} />
       </Switch>
     </div>
   );
