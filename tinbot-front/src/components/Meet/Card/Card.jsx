@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button, Card } from "antd";
 import ModalContact from "./ModalContact";
 
@@ -16,6 +17,7 @@ function Cards(props) {
   return (
     <div>
       <Card
+        id={props.id}
         hoverable
         style={{ width: 280, margin: "15px", minHeight: 390 }}
         cover={
@@ -31,19 +33,19 @@ function Cards(props) {
           title={props.title}
           description={props.description}
         />
-        {props.affichage ? (
-          <Button
-            type="primary"
-            style={{
-              marginTop: "20px",
-              backgroundColor: "#07172e",
-              borderRadius: "8px",
-            }}
-          >
-            <a style={{ textDecoration: "none", color: "white" }} href={url}>
+        {props.display ? (
+          <Link to={url}>
+            <Button
+              type="primary"
+              style={{
+                marginTop: "20px",
+                backgroundColor: "#07172e",
+                borderRadius: "8px",
+              }}
+            >
               Voir
-            </a>{" "}
-          </Button>
+            </Button>
+          </Link>
         ) : (
           <Button
             type="primary"
@@ -58,12 +60,7 @@ function Cards(props) {
           </Button>
         )}
       </Card>
-      {modal && (
-        <ModalContact
-          visible={ok}
-          // changeVisibility={(visibles) => setOk(visibles)}
-        />
-      )}
+      {modal && <ModalContact visible={ok} />}
     </div>
   );
 }

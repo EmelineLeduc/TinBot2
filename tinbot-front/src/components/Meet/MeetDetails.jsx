@@ -1,37 +1,36 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import firebase from "../../utils/firebaseConfig";
 import { List } from "antd";
 import Cards from "../Meet/Card/Card";
 import Header from "../Header/Header";
 import "./MeetDetails.css";
 
 function MeetDetails(props) {
-  const [details, setDetails] = useState([]);
-  const params = props.match.params;
-
-  useEffect(() => {
-    resquestApi();
-  }, []);
+  const [profile, setProfile] = useState({});
+  const params = useParams();
 
   const data = [
-    `Taille : ${details.size}`,
-    `Poids : ${details.weight}`,
-    `Couleur : ${details.color}`,
-    `Hobbie : ${details.hobbie}`,
+    `Taille : ${profile.size}`,
+    `Poids : ${profile.weight}`,
+    `Couleur : ${profile.color}`,
+    `Hobbie : ${profile.hobbie}`,
   ];
 
-  const resquestApi = async () => {
-    const url = ` http://localhost:4000/profile/${params.id}`;
+  useEffect(() => {
+    firebase
+      .database()
+      .ref("profileDB")
+      .child(params.id - 1)
+      .once("value")
+      .then((snapshot) => setProfile(snapshot.val()))
+      .catch((error) => ({
+        errorCode: error.code,
+        errorMessage: error.message,
+      }));
+  }, []);
 
-    try {
-      const resquest = await fetch(url);
-      const json = await resquest.json();
-      console.log(json);
-      setDetails(json);
-    } catch (e) {
-      console.log(`Error : ${e}.`);
-    }
-  };
   return (
     <div className="profile-container">
       <Header />
@@ -43,10 +42,10 @@ function MeetDetails(props) {
         }}
       >
         <Cards
-          img={details.picture}
-          title={details.name}
-          description={details.biography}
-          affichage={false}
+          img={profile.picture}
+          title={profile.name}
+          description={profile.biography}
+          display={false}
         />
         <List
           className="meet-list"
@@ -56,7 +55,7 @@ function MeetDetails(props) {
           size="small"
           header={
             <div style={{ color: "white", fontSize: "20px" }}>
-              {details.type}
+              {profile.type}
             </div>
           }
           footer={<div></div>}

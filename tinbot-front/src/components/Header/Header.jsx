@@ -1,20 +1,21 @@
 import React from "react";
-import { Nav, NavLink } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Nav } from "reactstrap";
 import "./Header.css";
 
 function Header(props) {
   return (
     <div>
       <Nav className="header">
-        <NavLink className="header-link" href="/">
+        <Link className="header-link" to="/">
           Accueil
-        </NavLink>
-        <NavLink className="header-link" href="rencontre">
+        </Link>
+        <Link className="header-link" to="/rencontre">
           Rencontre
-        </NavLink>
-        <NavLink className="header-link" href="/contact">
+        </Link>
+        <Link className="header-link" to="/contact">
           Contact
-        </NavLink>
+        </Link>
       </Nav>
     </div>
   );

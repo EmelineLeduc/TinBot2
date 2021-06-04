@@ -14,8 +14,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/form" component={SignIn} />
         <Route exact path="/contact" component={ContactForm} />
-        <Route path="/rencontre" component={Meet} />
-        <Route path="/:id" component={MeetDetails} />
+        <Route exact path="/rencontre" component={Meet} />
+        <Route exact path="/:id" component={MeetDetails} />
       </Switch>
     </div>
   );

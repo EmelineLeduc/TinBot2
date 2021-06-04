@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import firebase from "../../utils/firebaseConfig";
 import { Select, Button } from "antd";
 import Cards from "../Meet/Card/Card";
 import Header from "../Header/Header";
@@ -10,21 +11,18 @@ function Meet() {
   const [resetBtn, setResetBtn] = useState(false);
 
   useEffect(() => {
-    resquestApi();
+    const profileDB = firebase.database().ref("profileDB");
+    profileDB.on("value", (snapshot) => {
+      console.log(snapshot.val());
+      let previousProfile = snapshot.val();
+      let profile = [];
+      for (let id in previousProfile) {
+        profile.push({ id, ...previousProfile[id] });
+      }
+      setData(profile);
+      setFilterData(profile);
+    });
   }, []);
-  const resquestApi = async () => {
-    const url = "http://localhost:4000/profile";
-
-    try {
-      const resquest = await fetch(url);
-      const json = await resquest.json();
-      console.log(json);
-      setData(json);
-      setFilterData(json);
-    } catch (e) {
-      console.log(`Error : ${e}.`);
-    }
-  };
 
   const { Option } = Select;
 
@@ -111,7 +109,7 @@ function Meet() {
               img={item.picture}
               description={item.biography}
               id={item.id}
-              affichage={true}
+              display={true}
             />
           ))}
       </div>
